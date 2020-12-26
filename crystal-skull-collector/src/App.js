@@ -24,6 +24,23 @@ class App extends Component {
     this.setState({ target: currentTarget });
   }
   // assign random number to each skull
+  setAssignedNumbers() {
+    const newSkullsArray = this.state.skulls.map((skull) => {
+      const currentTarget = Math.floor(Math.random() * 11) + 1;
+
+      const copyOfSkulls = { ...skull, assignedNumber: currentTarget };
+
+      return copyOfSkulls;
+    });
+    console.log(newSkullsArray);
+    this.setState({ skulls: newSkullsArray });
+  }
+
+  // runs number assignment functions
+  setNumbers() {
+    this.setTarget();
+    this.setAssignedNumbers();
+  }
 
   // when player clicks on skull
   // update the players current total for this game
@@ -46,7 +63,7 @@ class App extends Component {
           <SkullsList skulls={this.state.skulls} />
         </div>
         <TargetNumber target={this.state.target} />
-        <button onClick={() => this.setTarget()}>Play</button>
+        <button onClick={() => this.setNumbers()}>Play</button>
       </div>
     );
   }
