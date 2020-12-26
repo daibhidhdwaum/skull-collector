@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import SkullsList from "./SkullsList";
 import TargetNumber from "./TargetNumber";
+import CurrentTotal from "./CurrentTotal";
 
 class App extends Component {
   // define initial state
@@ -44,6 +45,11 @@ class App extends Component {
 
   // when player clicks on skull
   // update the players current total for this game
+  setCurrentTotal(e, curr) {
+    const newTotal = this.state.currentTotal + curr;
+
+    this.setState({ currentTotal: newTotal });
+  }
 
   // check if the players current total is equal or greater than the target number
   // if the current total is lower than the target, continue with the game
@@ -60,9 +66,13 @@ class App extends Component {
       <div className="App">
         <h1>Crystal Skull Collector</h1>
         <div>
-          <SkullsList skulls={this.state.skulls} />
+          <SkullsList
+            skulls={this.state.skulls}
+            setCurrentTotal={(e, curr) => this.setCurrentTotal(e, curr)}
+          />
         </div>
         <TargetNumber target={this.state.target} />
+        <CurrentTotal total={this.state.currentTotal} />
         <button onClick={() => this.setNumbers()}>Play</button>
       </div>
     );
