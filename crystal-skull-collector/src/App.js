@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
-import SkullsList from "./SkullsList";
-import TargetNumber from "./TargetNumber";
-import CurrentTotal from "./CurrentTotal";
-import WinsAndLosses from "./WinsAndLosses";
+import SkullsList from "./components/SkullsList";
+import TargetNumber from "./components/TargetNumber";
+import CurrentTotal from "./components/CurrentTotal";
+import WinsAndLosses from "./components/WinsAndLosses";
+import Rules from "./components/Rules";
 
 class App extends Component {
   // define initial state
@@ -108,6 +109,7 @@ class App extends Component {
         <CurrentTotal total={this.state.currentTotal} />
         <WinsAndLosses wins={this.state.wins} losses={this.state.losses} />
         <button onClick={() => this.setNumbers()}>Play</button>
+        <Rules />
       </div>
     );
   }
