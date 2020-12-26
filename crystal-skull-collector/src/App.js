@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import SkullsList from "./SkullsList";
 import TargetNumber from "./TargetNumber";
 import CurrentTotal from "./CurrentTotal";
+import WinsAndLosses from "./WinsAndLosses";
 
 class App extends Component {
   // define initial state
@@ -18,6 +19,8 @@ class App extends Component {
     wins: 0,
     losses: 0,
   };
+
+  skullsResetState = [...this.state.skulls];
 
   // set the target number
   setTarget() {
@@ -52,14 +55,44 @@ class App extends Component {
   }
 
   // check if the players current total is equal or greater than the target number
-  // if the current total is lower than the target, continue with the game
+  componentDidUpdate(prevState) {
+    // if current total is lower than the target, continue with the game
+    if (this.state.target === 0) {
+      return;
+    } else if (prevState.currentTotal !== this.state.currentTotal) {
+      const curr = this.state.currentTotal;
+      const target = this.state.target;
+      let newWins = this.state.wins;
+      let newLosses = this.state.losses;
 
-  // if the current total is equal
-  // increase wins
-  // reset the game
-  // if the current total is greater
-  // increase losses
-  // reset the game
+      // if the current total is equal
+      if (curr === target) {
+        // increase wins
+        newWins++;
+        // reset the game
+        this.setState({
+          skulls: this.skullsResetState,
+          target: 0,
+          currentTotal: 0,
+          wins: newWins,
+        });
+        console.log(this.state.wins);
+      }
+      // if the current total is greater
+      else if (curr > target) {
+        // increase losses
+        newLosses++;
+        // reset the game
+        this.setState({
+          skulls: this.skullsResetState,
+          target: 0,
+          currentTotal: 0,
+          losses: newLosses,
+        });
+        console.log(this.state.losses);
+      }
+    }
+  }
 
   render() {
     return (
@@ -73,6 +106,7 @@ class App extends Component {
         </div>
         <TargetNumber target={this.state.target} />
         <CurrentTotal total={this.state.currentTotal} />
+        <WinsAndLosses wins={this.state.wins} losses={this.state.losses} />
         <button onClick={() => this.setNumbers()}>Play</button>
       </div>
     );
