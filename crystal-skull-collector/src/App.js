@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import SkullsList from "./SkullsList";
 import TargetNumber from "./TargetNumber";
 
 class App extends Component {
@@ -41,6 +42,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Crystal Skull Collector</h1>
+        <div>
+          <SkullsList skulls={this.state.skulls} />
+        </div>
         <TargetNumber target={this.state.target} />
         <button onClick={() => this.setTarget()}>Play</button>
       </div>
