@@ -1,0 +1,10 @@
+.container {
+  border: 1px solid #ddd;
+  width: calc(50% - 0.8rem);
+  margin: 0 0.4rem;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 2rem;
+}
