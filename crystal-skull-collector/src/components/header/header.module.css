@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  background-color: rgb(39, 37, 37);
+}
+
+.title {
+  font-family: "Nosifer", cursive;
+  color: #ddd;
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-size: 3rem;
+  }
+}
