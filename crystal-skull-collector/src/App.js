@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import "./normalize.css";
+import "./App.css";
+
+import Header from "./components/header/Header";
 import SkullsList from "./components/skullsList/SkullsList";
 import TargetNumber from "./components/targetNumber/TargetNumber";
 import CurrentTotal from "./components/currentTotal/CurrentTotal";
@@ -98,18 +102,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Crystal Skull Collector</h1>
-        <div>
-          <SkullsList
-            skulls={this.state.skulls}
-            setCurrentTotal={(e, curr) => this.setCurrentTotal(e, curr)}
-          />
+        <Header />
+        <div className="wrapper">
+          <section>
+            <ul>
+              <SkullsList
+                skulls={this.state.skulls}
+                setCurrentTotal={(e, curr) => this.setCurrentTotal(e, curr)}
+              />
+            </ul>
+          </section>
+          <section>
+            <TargetNumber target={this.state.target} />
+            <CurrentTotal total={this.state.currentTotal} />
+            <WinsAndLosses wins={this.state.wins} losses={this.state.losses} />
+          </section>
+          <button onClick={() => this.setNumbers()}>Play</button>
+          <Rules />
         </div>
-        <TargetNumber target={this.state.target} />
-        <CurrentTotal total={this.state.currentTotal} />
-        <WinsAndLosses wins={this.state.wins} losses={this.state.losses} />
-        <button onClick={() => this.setNumbers()}>Play</button>
-        <Rules />
       </div>
     );
   }
