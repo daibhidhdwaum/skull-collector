@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import SkullsList from "./components/SkullsList";
-import TargetNumber from "./components/TargetNumber";
-import CurrentTotal from "./components/CurrentTotal";
-import WinsAndLosses from "./components/WinsAndLosses";
-import Rules from "./components/Rules";
+import SkullsList from "./components/skullsList/SkullsList";
+import TargetNumber from "./components/targetNumber/TargetNumber";
+import CurrentTotal from "./components/currentTotal/CurrentTotal";
+import WinsAndLosses from "./components/winsAndLosses/WinsAndLosses";
+import Rules from "./components/rules/Rules";
 
 class App extends Component {
   // define initial state

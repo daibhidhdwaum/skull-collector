@@ -1,6 +1,8 @@
+import styles from "./Rules.module.css";
+
 const Rules = () => {
   return (
-    <section>
+    <section className={styles.rules}>
       <p>
         You will be given a random target number at the beginning of the game.
       </p>
