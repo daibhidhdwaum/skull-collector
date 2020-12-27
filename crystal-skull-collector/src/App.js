@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./normalize.css";
 import "./App.css";
 import styles from "./scoreboard.module.css";
+import buttonstyles from "./button.module.css";
 
 import Header from "./components/header/Header";
 import SkullsList from "./components/skullsList/SkullsList";
@@ -111,12 +112,20 @@ class App extends Component {
               setCurrentTotal={(e, curr) => this.setCurrentTotal(e, curr)}
             />
           </section>
+          <section className={buttonstyles.container}>
+            <button
+              onClick={() => this.setNumbers()}
+              className={buttonstyles.button}
+            >
+              Play
+            </button>
+          </section>
           <section className={styles.scoreboard}>
             <TargetNumber target={this.state.target} />
             <CurrentTotal total={this.state.currentTotal} />
             <WinsAndLosses wins={this.state.wins} losses={this.state.losses} />
           </section>
-          <button onClick={() => this.setNumbers()}>Play</button>
+
           <Rules />
         </div>
       </div>
