@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import "./normalize.css";
 import "./App.css";
+import styles from "./scoreboard.module.css";
 
 import Header from "./components/header/Header";
 import SkullsList from "./components/skullsList/SkullsList";
@@ -105,14 +106,12 @@ class App extends Component {
         <Header />
         <div className="wrapper">
           <section>
-            <ul>
-              <SkullsList
-                skulls={this.state.skulls}
-                setCurrentTotal={(e, curr) => this.setCurrentTotal(e, curr)}
-              />
-            </ul>
+            <SkullsList
+              skulls={this.state.skulls}
+              setCurrentTotal={(e, curr) => this.setCurrentTotal(e, curr)}
+            />
           </section>
-          <section>
+          <section className={styles.scoreboard}>
             <TargetNumber target={this.state.target} />
             <CurrentTotal total={this.state.currentTotal} />
             <WinsAndLosses wins={this.state.wins} losses={this.state.losses} />
