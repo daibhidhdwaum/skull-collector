@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
+// css
 import "./normalize.css";
 import "./App.css";
 import styles from "./scoreboard.module.css";
 import buttonstyles from "./button.module.css";
 
+// components
 import Header from "./components/header/Header";
 import SkullsList from "./components/skullsList/SkullsList";
 import TargetNumber from "./components/targetNumber/TargetNumber";
@@ -43,7 +45,6 @@ class App extends Component {
 
       return copyOfSkulls;
     });
-    console.log(newSkullsArray);
     this.setState({ skulls: newSkullsArray });
   }
 
@@ -83,7 +84,6 @@ class App extends Component {
           currentTotal: 0,
           wins: newWins,
         });
-        console.log(this.state.wins);
       }
       // if the current total is greater
       else if (curr > target) {
@@ -96,7 +96,6 @@ class App extends Component {
           currentTotal: 0,
           losses: newLosses,
         });
-        console.log(this.state.losses);
       }
     }
   }

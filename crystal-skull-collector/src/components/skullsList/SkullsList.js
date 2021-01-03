@@ -8,7 +8,11 @@ const SkullsList = ({ skulls, setCurrentTotal }) => {
           className={styles.skullButton}
           onClick={(e) => setCurrentTotal(e, skull.assignedNumber)}
         >
-          <img src={skull.src} alt="skull" className={styles.skullImage} />
+          <img
+            src={process.env.PUBLIC_URL + skull.src}
+            alt="skull"
+            className={styles.skullImage}
+          />
         </button>
       </li>
     );
