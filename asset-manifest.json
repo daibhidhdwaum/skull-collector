@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/skull-collector/static/css/main.55b39350.chunk.css",
-    "main.js": "/skull-collector/static/js/main.52ab20ea.chunk.js",
-    "main.js.map": "/skull-collector/static/js/main.52ab20ea.chunk.js.map",
+    "main.js": "/skull-collector/static/js/main.cddad22c.chunk.js",
+    "main.js.map": "/skull-collector/static/js/main.cddad22c.chunk.js.map",
     "runtime-main.js": "/skull-collector/static/js/runtime-main.11e17a5e.js",
     "runtime-main.js.map": "/skull-collector/static/js/runtime-main.11e17a5e.js.map",
     "static/js/2.b20045e7.chunk.js": "/skull-collector/static/js/2.b20045e7.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.11e17a5e.js",
     "static/js/2.b20045e7.chunk.js",
     "static/css/main.55b39350.chunk.css",
-    "static/js/main.52ab20ea.chunk.js"
+    "static/js/main.cddad22c.chunk.js"
   ]
 }
