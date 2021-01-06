@@ -18,10 +18,10 @@ class App extends Component {
   // define initial state
   state = {
     skulls: [
-      { id: 1, assignedNumber: 0, src: "/assets/white-skull.jpg" },
-      { id: 2, assignedNumber: 0, src: "/assets/green-skull.jpg" },
-      { id: 3, assignedNumber: 0, src: "/assets/red-skull.jpg" },
-      { id: 4, assignedNumber: 0, src: "/assets/black-skull.jpg" },
+      { id: 1, assignedNumber: 0, src: "/assets/white-skull.png" },
+      { id: 2, assignedNumber: 0, src: "/assets/green-skull.png" },
+      { id: 3, assignedNumber: 0, src: "/assets/red-skull.png" },
+      { id: 4, assignedNumber: 0, src: "/assets/black-skull.png" },
     ],
     target: 0,
     currentTotal: 0,
@@ -50,6 +50,11 @@ class App extends Component {
 
   // runs number assignment functions
   setNumbers() {
+    /**
+     * todo Hide play button after click
+     * todo Display again whe game is complete
+     *  */
+
     this.setTarget();
     this.setAssignedNumbers();
   }
